@@ -1,4 +1,4 @@
-#!/home/edwik/Documents/Python-Work/Personal-Blog/virtual/bin/python3
+#!/home/edwik/Documents/Python-Work/Personal-Blog/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
