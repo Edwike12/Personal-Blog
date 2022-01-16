@@ -1,5 +1,5 @@
 from flask import Flask
-#from app import SQLALchemy
+#from  sqlalchemy import SQLALchemy
 from os import path
 from flask_login import LoginManager
 
