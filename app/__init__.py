@@ -11,4 +11,8 @@ def create_app():
     def home():
         return "<h1>HELLO WORLD</h1>"
 
+    from .views import views
+
+    app.register_blueprint(views, url_prefix="/")        
+
     return app
