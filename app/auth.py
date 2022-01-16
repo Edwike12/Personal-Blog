@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint("auth", __name__)
 
+
 @auth.route("/login", methods= ['GET', 'POST'])
 def login():
      if request.method == 'POST':
@@ -23,7 +24,7 @@ def login():
         else:
             flash('Email does not exist.', category='error')
 
-            return  render_template("login.html")
+            return  render_template("login.html", user=current_user)
 
 @auth.route("/sign-up", methods= ['GET', 'POST'])
 def sign_up():
@@ -56,7 +57,7 @@ def sign_up():
             login_user(new_user, remember=True)
             flash('User created!')
             return redirect(url_for('views.home'))
-    return  render_template("signup.html")
+    return  render_template("signup.html", user=current_user)
 
 @auth.route("/logout", methods= ['GET', 'POST'])
 @login_required
