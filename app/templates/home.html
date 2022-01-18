@@ -1,1 +1,24 @@
-{% extends "posts_div.html" %} {% block title %}Home{% endblock %}
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <div class="col-sm-12 quotes">
+        <div class="panel panel-default">
+          <div class="card">
+            <div class="panel-body quote">
+              <blockquote class="blockquote mb-0 card-body"><br>
+                <p>{{quotes.quote}}</p>
+                <footer class="blockquote-footer">
+                  <cite title="Source Title" style="color: black;">{{quotes.author| capitalize}}</cite>
+    
+                </footer>
+    
+              </blockquote>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+{% endblock %}
