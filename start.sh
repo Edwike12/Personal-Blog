@@ -1,3 +1,3 @@
-export SECRET_KEY=edwike
+export SECRET_KEY=@123EDU
 
 python3 manage.py server
