@@ -19,6 +19,63 @@
       </div>
 </div>
 
+{% for blog in blogs %}
+  <div class="col-md-4 mb-5 ">
+    <div class="text-centre">
+      <div class="card text-white mb-3" >
+        <h3 class="card-title">{{blog.category}}</h3>
+        <div class="card-body">
 
+          
+          <h4 class="card-header">{{blog.title}}</h4>
+
+          <p class="card-text">{{blog.content}}</p>
+          <p class="card-text">{{blog.created_by| capitalize}}</p>
+          <p class="card-text">{{blog.date_posted.strftime('%Y-%m-%d')}}</p>
+          <a href="/blog" class="tag"><button class="btn-success">Add Blog</button></a>
+          <a href="{{ url_for('main.blog_details', id = blog.id)}}"><button class="btn-success">Comment</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="container row text-center whaw">
+    <div class="card col-md-12">
+        <p>Subscribe to receive updates on new blogs alerts </p>
+        <div class="col-md-12">
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} d-flex" role="alert">
+                <div>
+                  {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        <form action="{{ url_for('main.subscribe')}}" class="search text-center">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your Email" name="email" required><br>
+                <div class="input-group-append"><br>
+                    <button class="btn-success" type="submit" >
+                       Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+  
+<style>
+  body{
+    background-color: moccasin;
+  }
+  .whaw{
+    margin-top: 5%;
+  }
+</style>
 
 {% endblock %}
