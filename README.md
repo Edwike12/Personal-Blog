@@ -52,10 +52,15 @@ To fix a bug or enhance an existing module, follow these steps:
 
 ## USER STORY
 -A user can view the most recent posts.
+
 -A user can view and comment the blog posts on the site.
+
 -A user receives an email by joining a subscription.
+
 -a user is allowed to log in to the application
+
 -A user can see random quotes on the site
+
 -A writer can create a blog from the application and update or delete blogs I have created.    
 
 
